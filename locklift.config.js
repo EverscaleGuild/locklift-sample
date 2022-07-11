@@ -1,16 +1,21 @@
+const os = require('os');
+const HOME = os.homedir();
+
 module.exports = {
     compiler: {
-        path: '~/.everdev/solidity/solc',
+        path: `${HOME}/.everdev/solidity/solc`,
     },
     linker: {
-        path: '~/.everdev/solidity/tvm_linker',
-        lib: '~/.everdev/solidity/stdlib_sol.tvm',
+        path: `${HOME}/.everdev/solidity/tvm_linker`,
+    },
+    lib: {
+        path: `${HOME}/.everdev/solidity/stdlib_sol.tvm`,
     },
     networks: {
         local: {
             ton_client: {
                 network: {
-                    server_address: 'http://localhost',
+                    server_address: 'http://localhost:8080',
                 },
             },
             giver: {
